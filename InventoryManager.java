@@ -7,6 +7,7 @@ public class InventoryManager {
         newItem.setItem(0, "Ryzen 5600x", 199, 1 );
         System.out.println(newItem.getPrice());
         System.out.println("Hello World");
+        System.out.println("What");
 
     }
 }
