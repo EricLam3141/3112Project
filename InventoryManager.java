@@ -1,6 +1,20 @@
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 public class InventoryManager {
-    public static void main (String args[]) {
+    public static void main (String args[]) throws FileNotFoundException {
+        try {
+            File myObj = new File("filename.txt");
+            if (myObj.createNewFile()) {
+              System.out.println("File created: " + myObj.getName());
+            } else {
+              System.out.println("File already exists.");
+            }
+          } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+          }
 
         Scanner inputScan = new Scanner(System.in);
         inventoryItems newItem = new inventoryItems();
