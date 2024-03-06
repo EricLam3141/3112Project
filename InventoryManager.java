@@ -2,24 +2,28 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.FileWriter;
+
 public class InventoryManager {
     public static void main (String args[]) throws FileNotFoundException {
-        try {
-            File myObj = new File("filename.txt");
-            if (myObj.createNewFile()) {
-              System.out.println("File created: " + myObj.getName());
-            } else {
-              System.out.println("File already exists.");
-            }
-          } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-          }
-
+        //Initialization of objects/vars
+        File myObj = new File("inventory.txt");
+        Scanner myReader = new Scanner(myObj);
         Scanner inputScan = new Scanner(System.in);
         inventoryItems newItem = new inventoryItems();
         newItem.setItem(0, "Random item", 199, 1 );
         int select = 0;
+
+
+        //Reader prototype
+        while (myReader.hasNextLine()) {
+            String data = myReader.nextLine();
+            System.out.println(data);
+        }
+        myReader.close();
+
+        newItem.setItem(0, "Random item", 199, 1 );
+ 
       
         while(select != 3) {
             
@@ -40,6 +44,7 @@ public class InventoryManager {
             }
             inputScan.close();
         }
+
         
         
 }
